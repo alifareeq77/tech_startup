@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<style>
+    body {
+        background: black;
+    }
+</style>
+<input id="clickMe" type="button" value="Generate Random User" onclick="generate();"/>
+<script>
+    function generate() {
+        fetch('/api/v1/fruits/', {
+            method: 'POST',
+            body: JSON.stringify({
+                "id": 1,
+                "name": "Banana 🍌",
+                "description": "A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called plantains, distinguishing them from dessert banana"
+            })
+        }).then(
+            res => console.log(res)
+        )
+    }
+
+</script>
+</body>
+</html>

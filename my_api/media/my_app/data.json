@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Banana 🍌",
+    "description": "A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called plantains, distinguishing them from dessert banana"
+  },
+  {
+    "id": 2,
+    "name": "Apple 🍎",
+    "description": "An apple is a sweet, edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus."
+  },
+  {
+    "id": 3,
+    "name": "Peach 🍑",
+    "description": "The peach is a deciduous tree native to the region of Northwest China between the Tarim Basin and the north slopes of the Kunlun Mountains, where it was first domesticated and cultivated. It bears an edible juicy fruit called a peach or a nectarine."
+  },
+  {
+    "id": 4,
+    "name": "Strawberry 🍓",
+    "description": "The fruit is widely appreciated for its characteristic aroma, bright red color, juicy texture, and sweetness."
+  },
+  {
+    "id": 5,
+    "name": "Cherry",
+    "description": "A cherry is the fruit of many plants of the genus Prunus, and is a fleshy drupe. Commercial cherries are obtained from cultivars of several species, such as the sweet Prunus avium and the sour Prunus cerasus."
+  }
+]
