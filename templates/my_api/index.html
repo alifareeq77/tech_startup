@@ -13,13 +13,8 @@
 <input id="clickMe" type="button" value="Generate Random User" onclick="generate();"/>
 <script>
     function generate() {
-        fetch('/api/v1/fruits/', {
-            method: 'POST',
-            body: JSON.stringify({
-                "id": 1,
-                "name": "Banana 🍌",
-                "description": "A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called plantains, distinguishing them from dessert banana"
-            })
+        fetch('/api/v1/fruits/1', {
+            method: 'DELETE',
         }).then(
             res => console.log(res)
         )
