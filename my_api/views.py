@@ -57,7 +57,7 @@ def get_it(request):
                 json.dump(d, file, indent=2)
             return JsonResponse(
                 [{'code': 200, 'description': f'successfully created row with id = {len(response) + 1}'}],
-                content_type="application/json",
+                content_tygeneratepe="application/json",
                 safe=False)
 
 
@@ -66,19 +66,23 @@ def get_it_id(request, id):
     id = int(id)
     with open('my_api/media/my_app/data.json', 'r+') as f:
         response = json.load(f)
-    if id > 0 and id < len(response):
+    if id > 0:
+        print(id)
         if request.method == 'GET':
             return JsonResponse(response[int(id) - 1], content_type="application/json", safe=False)
-        elif request.method == 'DELETE':  # TODO make efficient way to update json file
-            with open('my_api/media/my_app/data.json', "r+") as file:
+        elif request.method == 'DELETE':
+            print(id)
+            with open('my_api/media/my_app/data.json', "r") as file:
                 d = json.load(file)
-                d.pop(id - 1)  # make a new dict with the new data
-                print('updating ....')
+                file.close()
+            with open('my_api/media/my_app/data.json', "w") as file:
+                d = [x for x in d if x['id'] != id]
+                print(d)
                 json.dump(d, file, indent=2)  # add data to json
-                return JsonResponse(
-                    [{'code': 200, 'description': f'successfully deleted row with id = {len(response) + 1}'}],
-                    content_type="application/json",
-                    safe=False)
+            return JsonResponse(
+                [{'code': 200, 'description': f'successfully deleted row with id = {len(response) + 1}'}],
+                content_type="application/json",
+                safe=False)
     else:
         return JsonResponse([{'code': 404,
                               'description': f'{id} is out of indexing range try number from 1 to {len(response)}'
